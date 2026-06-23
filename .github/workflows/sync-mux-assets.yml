@@ -1,0 +1,39 @@
+name: Sync Mux assets
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-mux-assets
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Mux assets
+        env:
+          MUX_TOKEN_ID: ${{ secrets.MUX_TOKEN_ID }}
+          MUX_TOKEN_SECRET: ${{ secrets.MUX_TOKEN_SECRET }}
+        run: node scripts/fetch-assets.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "mux-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/assets.json
+          git diff --cached --quiet && echo "No changes" || git commit -m "Sync Mux assets [skip ci]"
+          git push
