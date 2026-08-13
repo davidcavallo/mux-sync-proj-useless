@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2026-08-13T21:58:50.211Z",
-  "count": 71,
+  "generatedAt": "2026-08-13T22:13:15.654Z",
+  "count": 72,
   "videos": [
+    {
+      "id": "8nP7BcVqRcvEbdSewbNBcfXo9gNgCf23IEM6JSGiLs8",
+      "playbackId": "CHou3hiytAV01PKZh1vJmqzfGP14o2Udpi6Z12qxpeYc",
+      "title": "harriet-sugarcookie-vertical-compilation",
+      "duration": 4938.287211,
+      "createdAt": "2026-08-13T22:07:59.000Z",
+      "aspectRatio": "9:16",
+      "resolution": "2160p",
+      "poster": "https://image.mux.com/CHou3hiytAV01PKZh1vJmqzfGP14o2Udpi6Z12qxpeYc/thumbnail.webp?time=1728.4&width=640",
+      "previews": [
+        "https://image.mux.com/CHou3hiytAV01PKZh1vJmqzfGP14o2Udpi6Z12qxpeYc/animated.webp?start=740.7&end=742.7&width=480&fps=12",
+        "https://image.mux.com/CHou3hiytAV01PKZh1vJmqzfGP14o2Udpi6Z12qxpeYc/animated.webp?start=2469.1&end=2471.1&width=480&fps=12",
+        "https://image.mux.com/CHou3hiytAV01PKZh1vJmqzfGP14o2Udpi6Z12qxpeYc/animated.webp?start=4049.4&end=4051.4&width=480&fps=12"
+      ]
+    },
     {
       "id": "vg1SoGjPNzpeF1Teoallr005UEIT583FiupDHe7oeiyY",
       "playbackId": "6ij4iO7Rp9596wDHeKtaDlWV2kAakTeLplBKr00rDIaM",
