@@ -28,8 +28,13 @@ if (typeof fetch !== 'function') {
 const AUTH_HEADER = 'Basic ' + Buffer.from(`${TOKEN_ID}:${TOKEN_SECRET}`).toString('base64');
 
 // Same multi-scene preview idea as the catalogue page, so this file can feed it directly.
-const PREVIEW_SCENE_POSITIONS = [0.15, 0.5, 0.82];
-const PREVIEW_SCENE_DURATION = 2;
+// 10 evenly spaced scenes from 5% to 95% of the video
+const PREVIEW_SCENE_COUNT = 10;
+const PREVIEW_SCENE_POSITIONS = Array.from(
+  { length: PREVIEW_SCENE_COUNT },
+  (_, i) => 0.05 + (0.9 * i) / (PREVIEW_SCENE_COUNT - 1)
+);
+const PREVIEW_SCENE_DURATION = 1.2;
 const OUTPUT_PATH = path.join(__dirname, '..', 'public', 'assets.json');
 
 async function fetchAllAssets() {
